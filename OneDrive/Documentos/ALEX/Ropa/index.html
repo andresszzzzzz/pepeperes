@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos</title>
+</head>
+<body>
+
+ <div class="barra-superior">
+  <div class="contenedor-ordenamiento">
+    <select>
+      <option>Orden predeterminado</option>
+      <option>Precio: de menor a mayor</option>
+      <option>Precio: de mayor a menor</option>
+    </select>
+    <span>Mostrando 1–8 de 12 resultados</span>
+  </div>
+  <div class="botones-vista">
+    <button class="vista-cuadricula">🔲</button>
+    <button class="vista-lista">📄</button>
+  </div>
+</div>
+
+  <div class="contenedor-productos">
+    <div class="tarjeta-producto">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/018/743/197/small_2x/bell-pepper-isolated-png.png" alt="Pimentón">
+      <div class="nombre-producto">Pimentón</div>
+      <div class="estrellas">★★★★★</div>
+      <div class="precio">60.00$</div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://media.istockphoto.com/id/1207576826/es/foto/lechuga-iceberg-aislada-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=0tkBB74mJdg5g1jso9fXTbJR9hTNu1N69laQbFXI6YI=" alt="lechuga">
+      <div class="nombre-producto">Lechuga</div>
+      <div class="estrellas">★★★★☆</div>
+      <div class="precio">42.00$</div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://www.shutterstock.com/image-photo/fresh-banana-isolated-on-white-600nw-1932284528.jpg" alt="Banano">
+      <div class="nombre-producto">Banano </div>
+      <div class="estrellas">★★★★☆</div>
+      <div class="precio">46.00$ <s>55.00$</s></div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://static.vecteezy.com/system/resources/previews/007/143/983/non_2x/fresh-raw-dorado-fish-on-white-background-photo.jpg" alt="Pescado">
+      <div class="nombre-producto">Pescado fresco</div>
+      <div class="estrellas">★★★★☆</div>
+      <div class="precio">29.00$</div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://media.istockphoto.com/id/842216672/es/foto/un-racimo-de-uvas-verdes-y-rojas-aislados-en-un-blanco.jpg?s=612x612&w=0&k=20&c=Kip3i2ZG1-d6Go2psKanK2WZyMROYRjYQwQackqFDHE=" alt="Uvas">
+      <div class="nombre-producto">Uvas </div>
+      <div class="estrellas">★★★☆☆</div>
+      <div class="precio">22.00$</div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://st3.depositphotos.com/7566244/16662/i/450/depositphotos_166627068-stock-photo-hass-avocados-isolated-on-white.jpg" alt="Aguacate">
+      <div class="nombre-producto">Aguacate </div>
+      <div class="estrellas">★★★★☆</div>
+      <div class="precio">18.00$ <s>25.00$</s></div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://media.istockphoto.com/id/1365099869/es/foto/seis-manzanas.jpg?s=612x612&w=0&k=20&c=4Snix-2wFkMo5LGgIF3k8cImUROeUOLZU7a5bhiI_q8=" alt="Manzana verde">
+      <div class="nombre-producto">Manzana </div>
+      <div class="estrellas">★★★★★</div>
+      <div class="precio">79.00$</div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <img src="https://media.istockphoto.com/id/471359531/es/foto/zanahorias.jpg?s=612x612&w=0&k=20&c=mIfL1wJJUtW1GxCNlLzFhx8SZkaNBblmaaROxAgfvcY=" alt="Zanahoria">
+      <div class="nombre-producto">Zanahoria </div>
+      <div class="estrellas">★★★☆☆</div>
+      <div class="precio">29.00$ <s>35.00$</s></div>
+      <button class="boton">🛒 Añadir al carrito</button>
+    </div>
+    <div class="Btn1"><button>1</button></div>
+    <div class="Btn2"><button>2</button></div>
+    <div class="Btn3"><button>-></button></div>
+
+  </div>
+
+ 
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fff;
+      margin: 20px;
+      padding: 25px;
+      border-radius: 60px;
+      display: flex;
+      flex-direction: column;
+    }
+    .barra-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 0 5%;
+  margin-bottom: 40px;
+}
+
+  .barra-derecha {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+  }
+
+  .botones-vista {
+   display: flex;
+   gap: 10px;
+  }
+
+  .botones-vista button {
+  background-color: white;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   padding: 6px 10px;
+   cursor: pointer;
+   font-size: 16px;
+ }
+
+ .botones-vista button:hover {
+   background-color: #f0f0f0;
+  }
+
+    .contenedor-productos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      border-radius: 20px;
+      margin-bottom: 60px;
+      width: 70%;
+      padding-left: 15%;
+    }
+
+    .tarjeta-producto {
+      flex: 0 1 calc(25% - 20px);
+      border: 1px solid #eee;
+      width: 400px;
+      height: 300px;
+      padding: 0px;
+      text-align: center;
+      box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .tarjeta-producto img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+     border-radius: 20px;
+     margin-bottom: 10px;
+      letter-spacing: 20px;
+    }
+
+    .nombre-producto {
+      font-weight: bold;
+      margin: 10px 0 5px;
+      font-size: 20px;  
+    }
+
+    .precio {
+      color: green;
+      margin: 5px 0;
+    }
+
+    .estrellas {
+      color: gold;
+      margin: 5px 0;
+    }
+
+    .boton {
+      background-color: orange;
+      border: none;
+      padding: 8px 12px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .paginacion {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .Btn1 button {  
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 20px;
+      
+    }
+
+    .Btn1 button:hover {
+      background-color: green;
+      color: white;
+      border-radius: 20px;
+    }
+    .Btn2 button {  
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 20px;
+      
+    }
+
+    .Btn2 button:hover {
+      background-color: green;
+      color: white;
+      border-radius: 20px;
+    }
+    .Btn3 button {  
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background-color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      border-radius: 20px;
+      
+    }
+
+    .Btn3 button:hover {
+      background-color: green;
+      color: white;
+      border-radius: 20px;
+    }
+  </style>
+
+</body>
+</html>

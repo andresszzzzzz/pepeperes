@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Restaurante</title>
+    <style>
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f7fa;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+        }
+
+
+        .container {
+            background-color: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+            width: 380px;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            text-align: center;
+            color: #5d6e7f;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            box-sizing: border-box;
+        }
+
+        input[type="number"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        
+        h3 {
+            color: #333;
+            font-size: 1.1em;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            font-weight: 400;
+        }
+
+        /* Botón */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cuenta Restaurante</h1>
+
+        <label for="subtotal">Subtotal de la comida ($):</label>
+        <input type="number" id="subtotal" min="0" step="any">
+
+        <h3>Tipo de Cliente:</h3>
+        <label><input type="radio" name="tipo" value="0" checked> No Socio (0%)</label><br>
+        <label><input type="radio" name="tipo" value="5"> Socio Estándar (5%)</label><br>
+        <label><input type="radio" name="tipo" value="12"> Socio Premium (12%)</label><br><br>
+
+        <button onclick="calcular()">Calcular Total</button>
+
+        <div class="results">
+            <p><strong>Propina (10%):</strong> $<span id="propina">0.00</span></p>
+            <p><strong>IVA (11%):</strong> $<span id="iva">0.00</span></p>
+            <p><strong>Descuento:</strong> $<span id="descuento">0.00</span></p>
+            <hr>
+            <h2 class="total-final">Total Final: $<span id="total">0.00</span></h2>
+        </div>
+    </div>
+
+    <script>
+        function calcular() {
+            let subtotal = parseFloat(document.getElementById("subtotal").value);
+            if (isNaN(subtotal) || subtotal <= 0) {
+                alert("Por favor, ingrese un subtotal válido mayor que 0.");
+                return;
+            }
+
+            let propina = subtotal * 0.10;
+            let iva = subtotal * 0.11;
+
+            let radios = document.getElementsByName("tipo");
+            let descuentoPorcentaje = 0;
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    descuentoPorcentaje = parseFloat(radios[i].value);
+                    break;
+                }
+            }
+            let descuento = subtotal * (descuentoPorcentaje / 100);
+
+            let total = subtotal + propina + iva - descuento;
+
+            document.getElementById("propina").textContent = propina.toFixed(2);
+            document.getElementById("iva").textContent = iva.toFixed(2);
+            document.getElementById("descuento").textContent = descuento.toFixed(2);
+            document.getElementById("total").textContent = total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+const firebaseConfig = {
+  apiKey: "AIzaSyC1FeNvWzEkD5lqzmy6aBPh5bS6qCtmXnk",
+  authDomain: "fir-sz-f437e.firebaseapp.com",
+  projectId: "fir-sz-f437e",
+  storageBucket: "fir-sz-f437e.firebasestorage.app",
+  messagingSenderId: "658741283505",
+  appId: "1:658741283505:web:20bee0f8b7bc8dfe0eb090",
+  measurementId: "G-B9VYMM8WXR"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cards">
+  <div class="card">
+    <img src="./Boom.png" alt="">
+    
+    <p>BoomBurgers</p>
+    <a href="https://andresszzzzzz.github.io/BoomBurguers/">Ver más</a>
+  </div>
+
+  <div class="card">
+    <img src="./Onlines.png" alt="">
+   
+    <p>Shop online</p>
+    <a href="https://andresszzzzzz.github.io/online/">Ver más</a>
+  </div>
+
+  <div class="card">
+    <img src="./Fut.png" alt="">
+    
+    <p>Apex Drift</p>
+    <a href="https://andresszzzzzz.github.io/Juego_Fut/">Ver más</a>
+  </div>
+
+  <div class="card">
+    <img src="Fact.png" alt="">
+   
+    <p>Factura</p>
+    <a href="https://andresszzzzzz.github.io/FAC/">Ver más</a>
+  </div>
+
+  <div class="card">
+    <img src="./Ropa.png" alt="">
+   
+    <p>Tienda Ropa</p>
+    <a href="https://andresszzzzzz.github.io/Ropa/">Ver más</a>
+  </div>
+
+  <div class="card">
+    <img src="./Verduras.png" alt="">
+
+    <p>Supermercado Verduras y frutas</p>
+    <a href="https://andresszzzzzz.github.io/Verduras/">Ver más</a>
+  </div>
+</div>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>6 Cards - Ejemplo</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa7b2;
+      --accent:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{
+      background: linear-gradient(180deg,#071022 0%, #0f1b2a 100%);
+      color: #e6eef6; -webkit-font-smoothing:antialiased;
+      padding:40px;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    .wrap{
+      width:100%;max-width:1200px;
+    }
+
+    h1{font-size:1.25rem;margin:0 0 18px 6px;color:var(--accent);letter-spacing:0.3px}
+
+    /* Grid */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:20px;
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      .grid{grid-template-columns: repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      .grid{grid-template-columns: 1fr}
+      body{padding:20px}
+    }
+
+    /* Card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      padding:16px;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s;
+      display:flex;flex-direction:column;gap:12px;min-height:180px;
+      overflow:hidden;
+    }
+
+    .card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(3,8,30,0.65)}
+
+    .card-hero{
+      height:96px;border-radius:10px;overflow:hidden;position:relative;
+      display:flex;align-items:flex-end;padding:12px;color:white;font-weight:600;font-size:0.95rem
+    }
+
+    /* simple gradients as placeholders */
+    .g1{background:linear-gradient(135deg,#60a5fa 0%, #7dd3fc 100%)}
+    .g2{background:linear-gradient(135deg,#f472b6 0%, #fb7185 100%)}
+    .g3{background:linear-gradient(135deg,#34d399 0%, #10b981 100%)}
+    .g4{background:linear-gradient(135deg,#f59e0b 0%, #f97316 100%)}
+    .g5{background:linear-gradient(135deg,#a78bfa 0%, #7c3aed 100%)}
+    .g6{background:linear-gradient(135deg,#fca5a5 0%, #f87171 100%)}
+
+    .card-body{display:flex;flex-direction:column;gap:8px;flex:1}
+    .card-title{font-size:1rem;margin:0}
+    .card-desc{font-size:0.88rem;color:var(--muted);margin:0}
+
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:0.75rem;padding:6px 9px;border-radius:999px;background:var(--glass);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .card-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+    .btn{
+      appearance:none;border:0;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));color:var(--accent);font-weight:600;cursor:pointer;border:1px solid rgba(96,165,250,0.18);
+      transition:transform .16s, box-shadow .16s
+    }
+    .btn:active{transform:translateY(1px)}
+
+    .meta{font-size:0.82rem;color:var(--muted)}
+
+    /* subtle floating icon */
+    .badge{
+      position:absolute;right:10px;top:10px;background:rgba(255,255,255,0.06);padding:6px 8px;border-radius:999px;font-size:0.78rem;border:1px solid rgba(255,255,255,0.03)
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Galería — 6 Cards</h1>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-hero g1">
+          <div>App Analytics</div>
+          <div class="badge">Nuevo</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Panel de métricas</h2>
+          <p class="card-desc">Visualiza eventos, usuarios activos y retención con gráficos interactivos y filtros rápidos.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Analytics</div>
+              <div class="tag">Dashboard</div>
+            </div>
+            <div>
+              <button class="btn">Ver</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-hero g2">
+          <div>Diseño</div>
+          <div class="badge">Pro</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Kit UI</h2>
+          <p class="card-desc">Componentes reutilizables, tokens y guías de estilo para acelerar tu desarrollo front-end.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Design</div>
+              <div class="tag">Components</div>
+            </div>
+            <div>
+              <button class="btn">Explorar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-hero g3">
+          <div>Performance</div>
+          <div class="badge">Top</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Optimización</h2>
+          <p class="card-desc">Estrategias para reducir tiempo de carga, lazy-loading y optimización de assets.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Speed</div>
+              <div class="tag">SEO</div>
+            </div>
+            <div>
+              <button class="btn">Aprender</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-hero g4">
+          <div>Comunidad</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Foro</h2>
+          <p class="card-desc">Conecta con desarrolladores, comparte ideas y obtén feedback sobre tus proyectos.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Community</div>
+              <div class="tag">Help</div>
+            </div>
+            <div>
+              <button class="btn">Entrar</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-hero g5">
+          <div>Aprendizaje</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Cursos</h2>
+          <p class="card-desc">Cursos prácticos, retos y proyectos guiados para mejorar tus habilidades.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Cursos</div>
+              <div class="tag">Reto</div>
+            </div>
+            <div>
+              <button class="btn">Inscribirme</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-hero g6">
+          <div>Soporte</div>
+        </div>
+        <div class="card-body">
+          <h2 class="card-title">Centro de ayuda</h2>
+          <p class="card-desc">Documentación, preguntas frecuentes y guías paso a paso para resolver dudas comunes.</p>
+          <div class="card-row">
+            <div class="tags">
+              <div class="tag">Docs</div>
+              <div class="tag">FAQ</div>
+            </div>
+            <div>
+              <button class="btn">Abrir</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</body>
+</html>

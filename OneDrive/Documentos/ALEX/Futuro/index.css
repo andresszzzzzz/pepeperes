@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  background: black;
+  animation: fadeIn 1s ease forwards;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* 🎥 Fondo del video */
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ✨ Título arriba */
+.bienvenida {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 25px #ff00ff;
+  letter-spacing: 3px;
+  animation: brillo 2s infinite alternate;
+  text-align: center;
+  z-index: 3;
+}
+
+/* 🔘 Contenedor de botones perfectamente alineados */
+.botones {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* Espacio uniforme entre botones */
+  z-index: 3;
+}
+
+/* 🎮 Estilo de botones */
+.btn-juego {
+  padding: 16px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ffff;
+  border-radius: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+  transition: all 0.3s ease;
+  animation: brillo 2s infinite alternate;
+  text-align: center;
+  min-width: 180px; /* 🔹 igual ancho para todos */
+}
+
+/* 🟣 Botón principal */
+.btn-juego.principal {
+  border-color: #ff00ff;
+  box-shadow: 0 0 20px #ff00ff, 0 0 25px #00ffff;
+}
+
+/* 💫 Hover */
+.btn-juego:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 25px #00ffff, 0 0 40px #ff00ff;
+}
+
+/* ✨ Animaciones */
+@keyframes brillo {
+  from { text-shadow: 0 0 8px #ff00ff, 0 0 15px #00ffff; }
+  to { text-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}

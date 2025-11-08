@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2></h2>
+            <p id="msj"></p>
+            <h2 class="subt"></h2>
+        </div>
+
+        <div>
+            <p id="parr"></p>
+            <h3 id="n1">45</h3>
+            <h4 id="n2">23</h4>
+            <span id="r"></span><br>
+
+            <label><input type="radio" name="color" value="Rojo">Rojo</label><br>
+            <label><input type="radio" name="color" value="Azul">Azul</label><br>
+            <label><input type="radio" name="color" value="Verde">Verde</label><br><br>
+
+            <button id="btn">Mostrar seleccionado</button>
+
+            <p id="resultado"></p>
+        </div>
+        <div>
+            <label><input type="checkbox" name="hobby" value="Leer"> Leer</label><br>
+            <label><input type="checkbox" name="hobby" value="Deporte"> Deporte</label><br>
+            <label><input type="checkbox" name="hobby" value="Música"> Música</label><br><br>
+            <button id="btn1">Mostrar seleccionados</button>
+
+            <p id="resultadoo"></p>
+        </div>
+        <div><select id="pais">
+                <option value="">-- Selecciona --</option>
+                <option value="Colombia">Colombia</option>
+                <option value="México">México</option>
+                <option value="Argentina">Argentina</option>
+                <option value="España">España</option>
+            </select>
+            <br><br>
+            <button id="btnPais">Mostrar país</button>
+
+            <p id="resultadop"></p>
+        </div>
+    </div>
+    <script>
+        // querySelector
+        console.log("document");
+        document.querySelector("h2").textContent = "Hello ";
+        document.querySelector("#msj").textContent = "3139319.";
+        document.querySelector(".subt").textContent = "Adso.";
+
+        document.querySelector("#btn").addEventListener("click", function () {
+            let seleccionado = document.querySelector('input[name="color"]:checked');
+
+            if (seleccionado) {
+                document.querySelector("#resultado").textContent =
+                    "Seleccionaste: " + seleccionado.value;
+            } else {
+                document.querySelector("#resultado").textContent =
+                    "No has seleccionado nada.";
+            }
+        });
+
+        document.querySelector("#btn1").addEventListener("click", function () {
+            let seleccionados = document.querySelectorAll('input[name="hobby"]:checked');
+
+            if (seleccionados.length > 0) {
+                let valores = Array.from(seleccionados).map(chk => chk.value);
+                document.querySelector("#resultadoo").textContent =
+                    "Tus hobbies son: " + valores.join(", ");
+            } else {
+                document.querySelector("#resultadoo").textContent =
+                    "No seleccionaste ningún hobby.";
+            }
+        });
+          document.querySelector("#btnPais").addEventListener("click", function() {
+      let pais = document.querySelector("#pais").value;
+
+      if (pais) {
+        document.querySelector("#resultadop").textContent =
+          "Seleccionaste: " + pais;
+      } else {
+        document.querySelector("#resultadop").textContent =
+          "No seleccionaste ningún país.";
+      }
+    });
+        // getElementById
+        document.getElementById("parr").textContent = "Hola Adso";
+        let num1 = document.getElementById("n1");
+        let num2 = document.getElementById("n2");
+        let r = document.getElementById("r");
+        r.textContent = (num1.textContent / num2.textContent).toFixed(2);
+    </script>
+</body>
+
+</html>
